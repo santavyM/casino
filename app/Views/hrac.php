@@ -10,11 +10,44 @@
                 <div class="card-body p-1-9 p-xl-5">
                     <div class="mb-4">
                         <h3 class="h4 mb-0"><?= $hrac[0]->jmeno." ".$hrac[0]->prijmeni ?></h3>
+                        <a href="" data-bs-toggle="modal" data-bs-target="#modal" class="float-right">edit</a>
+                        <div class="modal h-50" tabindex="-1" id="modal">
+          <div class="modal-dialog">
+            <div class="modal-content bg-dark text-white">
+              <div class="modal-header">
+                <h5 class="modal-title">Edit user profile</h5>
+                <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body bg-dark text-white" id="focus">
+          <div class="container">
+          <div class="row">
+          <div class="col">
+          <?= form_open('/Casino/updateUser');?>
+            <?= form_label(' ')?>
+                <label for="input1" class="form-label">jmeno</label>
+                <?= form_input('jmeno','',['placeholder'=>$hrac[0]->jmeno, 'value'=>$hrac[0]->jmeno, 'type'=>'text', 'class'=>'form-control'],'cislo') ?>
+                </div>
+                <div class="col">
+                <label for="input2" class="form-label">prijmeni</label>
+                <?= form_input('prijmeni','',['placeholder'=>$hrac[0]->prijmeni, 'value'=>$hrac[0]->prijmeni, 'type'=>'text', 'class'=>'form-control'],'cislo') ?>
+                </div>
+            </div>
+            </div>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <?= form_label(' ')?>
+                <input type="submit" value="Edit" class="btn btn-success">
+            <?= form_close()?> 
+             </div>
+            </div>
+          </div>
+        </div>
+        <br>
                         <span class="text-primary">Level: </span>
+
                     </div>
-                    <ul class="list-unstyled mb-4">
-                        <li class="mb-3"><a href="#!" class="text-white"><i class="far fa-envelope display-25 me-3 text-secondary"></i><?= $hrac[0]->jmeno.".".$hrac[0]->prijmeni ?>@gmail.com</a></li>
-                        <li class="mb-3"><a href="#!" class="text-white"><i class="fas fa-wallet display-25 me-3 text-secondary"></i>+012 (345) 6789</a></li>
+                    <ul class="list-unstyled mb-3">
+                        <li class="mb-2"><a class="text-white"><i class="far fa-envelope display-25 me-3 text-secondary"></i><?= $hrac[0]->jmeno.".".$hrac[0]->prijmeni ?>@gmail.com</a></li>
+                        <li class="mb-2"><a class="text-white"><i class="fas fa-wallet display-25 me-3 text-secondary"></i>+012 (345) 6789</a></li>
                     </ul>
                 </div>
             </div>
@@ -64,13 +97,9 @@
 
     const elements = document.querySelectorAll('#ElementId');
 
-// Loop through each element
 for (let i = 0; i < elements.length; i++) {
   const element = elements[i];
-
-  // Check if the text content contains a hyphen
   if (element.textContent.includes('-')) {
-    // If the text contains a hyphen, change the color
     element.style.color = '#fc304f';
   }
   else{console.log('nice');

@@ -20,6 +20,21 @@ class Casino extends BaseController
         echo view("hlavni", $data);
     }
 
+    public function edit()
+    {
+        $model = new Model();
+        helper('form');
+        helper('date');
+        
+        $jmeno = $this->request->getPost('jmeno');
+        $prijmeni = $this->request->getPost('prijmeni');
+        //$hrac_id = 	$this->request->getPost('hrac_id');
+        
+        $model->updateUser($jmeno, $prijmeni);
+        
+        return redirect()->to('/'.$mt);
+    }
+
     public function hrac($mt)
     {
         $model = new Model();

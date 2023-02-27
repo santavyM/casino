@@ -104,6 +104,18 @@ class Model
 
    }
 
+   function updateUser($jmeno, $prijmeni)
+    {
+        $builder = $this->db->table('hrac');
+        $data = [
+            'jmeno' => $sazka,
+            'prijnmeni' => $vyplaceni,
+        ];
+        $builder->where('id', 1);
+        $builder->update($data);
+    }
+   
+
    function insertCoinflip($sazka, $vyplaceni, $datetime)
    {
     $builder = $this->db->table('zaznamyhry');

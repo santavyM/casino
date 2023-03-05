@@ -25,14 +25,13 @@ class Casino extends BaseController
         $model = new Model();
         helper('form');
         helper('date');
-        
         $jmeno = $this->request->getPost('jmeno');
         $prijmeni = $this->request->getPost('prijmeni');
         //$hrac_id = 	$this->request->getPost('hrac_id');
         
         $model->updateUser($jmeno, $prijmeni);
         
-        return redirect()->to('/'.$mt);
+        return redirect()->to('hlavni');
     }
 
     public function hrac($mt)

@@ -34,7 +34,7 @@ class Database extends Config
         'DSN'      => '',
         'hostname' => 'localhost',
         'username' => 'root',
-        'password' => 'web-0AUH',//web-0AUH
+        'password' => '',//web-0AUH
         'database' => 'casino',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',

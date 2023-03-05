@@ -108,8 +108,9 @@ class Model
     {
         $builder = $this->db->table('hrac');
         $data = [
-            'jmeno' => $sazka,
-            'prijnmeni' => $vyplaceni,
+            'jmeno' => $jmeno,
+            'prijmeni' => $prijmeni,
+            'fotka' => "1.png"
         ];
         $builder->where('id', 1);
         $builder->update($data);

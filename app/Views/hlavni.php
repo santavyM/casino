@@ -1,6 +1,7 @@
 <?=$this->extend("layout/master")?>
 
 <?=$this->section("content")?>
+<link type="text/css" rel="stylesheet" href="<?= base_url('assets/bootstrap/css/css.css'); ?>">
 
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
@@ -20,6 +21,24 @@
     <span class="sr-only"></span>
   </a>
 </div>
+
+<section class="events">
+  <div class="title">
+    <h1>Original Games</h1>
+    <div class="line"></div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <img src="<?= base_url('assets/casino/coinflip1.png'); ?>" alt="">
+      <a href="<?= base_url('coinflip'); ?>" class="ctn">Play Game</a>
+    </div>
+    <div class="col">
+      <img src="<?= base_url('assets/casino/dice1.png'); ?>" alt="" style="width: 500px 150px;">
+      <a href="#" class="ctn">Play Game</a>
+    </div>
+  </div>
+</section>
+
 <br>
 <h4 class="display-1 font-weight-thin text-center text-white" style="font-family: 'Courier New', Courier, monospace;">Original Games</h4>
 <div class="container d-flex justify-content-center align-items-center">
@@ -44,7 +63,6 @@
     </div>
   </div>
 </div>
-
 
 
 <h1>Welcome to About us page</h1>

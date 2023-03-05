@@ -43,7 +43,7 @@ $routes->post('/Casino/check_form', 'Casino::check_form');
 $routes->get('coinflip', 'Casino::coinflip');
 $routes->post('/Casino/gameCoinflip', 'Casino::game_coinflip');
 $routes->get('/(:any)', 'Casino::hrac/$1');
-$routes->put('/Casino/updateUser', 'Casino::edit');
+$routes->post('/Casino/updateUser', 'Casino::edit');
 
 /*
  * --------------------------------------------------------------------

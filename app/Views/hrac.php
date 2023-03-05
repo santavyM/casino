@@ -25,11 +25,11 @@
           <?= form_open('/Casino/updateUser');?>
             <?= form_label(' ')?>
                 <label for="input1" class="form-label">jmeno</label>
-                <?= form_input('jmeno','',['placeholder'=>$hrac[0]->jmeno, 'value'=>$hrac[0]->jmeno, 'type'=>'text', 'class'=>'form-control'],'cislo') ?>
+                <?= form_input('jmeno','',['id'=>'myName', 'type'=>'text','defaultValue'=>$hrac[0]->jmeno, 'placeholder'=>$hrac[0]->jmeno, 'value'=>$hrac[0]->jmeno, 'class'=>'form-control'],'') ?>
                 </div>
                 <div class="col">
                 <label for="input2" class="form-label">prijmeni</label>
-                <?= form_input('prijmeni','',['placeholder'=>$hrac[0]->prijmeni, 'value'=>$hrac[0]->prijmeni, 'type'=>'text', 'class'=>'form-control'],'cislo') ?>
+                <?= form_input('prijmeni','',['id'=>'mySurname','placeholder'=>$hrac[0]->prijmeni, 'class'=>'form-control'],'') ?>
                 </div>
             </div>
             </div>
@@ -95,6 +95,7 @@
 
 <script>
 
+
     const elements = document.querySelectorAll('#ElementId');
 
 for (let i = 0; i < elements.length; i++) {
@@ -105,6 +106,9 @@ for (let i = 0; i < elements.length; i++) {
   else{console.log('nice');
     element.style.color = '#73c72e';}
 }
+document.getElementById("myName").defaultValue = <?=$hrac[0]->prijmeni?>.toString();
+document.getElementById("mySurname").defaultValue = <?=$hrac[0]->prijmeni?>.toString();
+
 </script>
 
 <style>

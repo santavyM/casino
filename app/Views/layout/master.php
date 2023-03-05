@@ -4,7 +4,7 @@
 
         <title>pes</title>
         <link rel="icon" type="image/png" href="<?= base_url('assets/casino/logo1.png'); ?>"/>
-        <link type="text/css" rel="stylesheet" href="<?= base_url('assets/bootstrap/css/css.css'); ?>">
+        <link type="text/css" rel="stylesheet" href="<?= base_url('assets/bootstrap/css/style.css'); ?>">
         <link type="text/css" rel="stylesheet" href="<?= base_url('assets/bootstrap/css/bootstrap.min.css'); ?>">
         
     </head>

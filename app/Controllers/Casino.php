@@ -34,6 +34,19 @@ class Casino extends BaseController
         return redirect()->to('hlavni');
     }
 
+    public function hraci(){
+        $model = new Model();
+        $data['data'] = $model->getHlavni();
+        $data['deposit'] = $model->getDeposit();
+        $data['hodnota'] = $model->getHodnota();
+        $data['sazka'] = $model->getSazka();
+        $data['vyplaceni'] = $model->getVyplaceni();
+
+        $data['hraci'] = $model->getHraci();
+
+        echo view("hraci", $data);
+    }
+
     public function hrac($mt)
     {
         $model = new Model();

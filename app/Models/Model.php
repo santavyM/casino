@@ -34,7 +34,18 @@ class Model
           $data = $builder->get()->getResult();
           return $data;
     }
-   
+    
+    function getHraci()
+    {
+        $builder = $this->db->table("hrac");
+        $builder->select("id, jmeno, prijmeni, fotka");
+        $builder->limit(8);
+        $builder->orderBy("id","desc");
+
+        $data = $builder->get()->getResult();
+        return $data;
+    }
+
     function getHlavni()
    {
         $builder = $this->db->table("hrac");

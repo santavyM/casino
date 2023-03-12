@@ -9,10 +9,7 @@
     <div class="collapse navbar-collapse mt-2" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="#">Games</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Promotions</a>
+          <a class="nav-link" href="<?= base_url('admin'); ?>">Admin Panel</a>
         </li>
       </ul>
     </div>
@@ -31,7 +28,7 @@
   <img src="<?= base_url('assets/photo/1.png'); ?>" width="50" alt="player" class="img-thumbnail rounded-circle">
   </button>
   <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
-    <li><a class="dropdown-item" href="<?= base_url(); ?><?php echo("/".$data[0]->id) ?>"><?php echo($data[0]->jmeno)." ".($data[0]->prijmeni) ?></a></li>
+    <li><a class="dropdown-item" href="<?= base_url(); ?><?php echo("/hrac/".$data[0]->id) ?>"><?php echo($data[0]->jmeno)." ".($data[0]->prijmeni) ?></a></li>
     <li><a class="dropdown-item" href="<?= base_url('logout'); ?>">Log Out</a></li>
   </ul>
 </div>

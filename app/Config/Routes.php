@@ -45,6 +45,7 @@ $routes->post('/Casino/gameCoinflip', 'Casino::game_coinflip');
 $routes->get('hrac/(:any)', 'Casino::hrac/$1');
 $routes->post('/Casino/updateUser', 'Casino::edit');
 $routes->get('admin','Casino::hraci');
+$routes->get('/admin/delete/(:any)', 'Casino::delete/$1');
 
 /*
  * --------------------------------------------------------------------

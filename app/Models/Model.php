@@ -25,6 +25,15 @@ class Model
         return $randomString;
     }
 
+    function deleteRow($id)
+    {   
+        $builder = $this->db->table("hrac");
+        $builder->where("id", $id);
+        $builder->delete();
+
+    }
+
+
     function getHrac($mt)
     {
           $builder = $this->db->table("hrac");

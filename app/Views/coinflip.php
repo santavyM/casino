@@ -190,6 +190,18 @@ function stopSpinning(val) {
 
   if (result === "edge") {
     divResult.innerHTML = 'Edge!!!';
+    $.ajax({
+    type: 'post',
+    url: 'Casino/gameCoinflip',
+    data: {
+        vyplaceni: 0,
+        sazka: document.getElementById('betText').value
+    },
+    success: function (response) {
+       console.log('not nice');
+       window.location="coinflip";
+    }
+});
   } else if (result == chosen) {
     balance = balance + (2 * document.getElementById('betText').value * 1);
     divResult.innerHTML = 'Výhra!!!';

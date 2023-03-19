@@ -34,6 +34,15 @@ class Casino extends BaseController
         return redirect()->to('hlavni');
     }
 
+    public function delete()
+    {
+        $id = $this->request->getPost('id');
+        $model = new Model();
+        $model->deleteRow($id);
+        
+        return redirect()->to('hraci');
+    }
+
     public function hraci(){
         $model = new Model();
         $data['data'] = $model->getHlavni();

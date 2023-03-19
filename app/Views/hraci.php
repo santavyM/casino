@@ -17,7 +17,7 @@
     <td><?= $row->id ?></td>
     <td><?= $row->jmeno ?></td>
     <td><?= $row->prijmeni ?></td>
-    <td><a href="<?= base_url('hraci/delete/'.$row->id); ?>" class="btn btn-danger btn-sm">Delete</a></td>
+    <td><a data-id="<?= $row->id; ?>" class="delete-button btn btn-danger btn-sm">Delete</a></td> <!--href=" ('admin/delete/'.$row->id); ?>" -->
   </tr>
   <?php endforeach; ?>
 </table>
@@ -66,4 +66,18 @@ $template = [
   </div>
   </div>
 </div>
+
+<script>
+    $(document).on('click', '.delete-button', function() {
+        var id = $(this).data('id');
+        $.ajax({
+            type: "POST",
+            url: "<?= base_url('Casino/delete') ?>",
+            data: {id: id},
+            success: function(response) {
+                // Reload the page or update the table without the deleted row
+            }
+        });
+    });
+</script>
 <?=$this->endSection()?>
